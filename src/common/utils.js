@@ -140,14 +140,13 @@ const isValidHexColor = (hexColor) => {
  * @returns {boolean | undefined } The parsed value.
  */
 const parseBoolean = (value) => {
-  if (typeof value === "boolean") {
-    return value;
-  }
+  if (typeof value === "boolean") return value;
 
   if (typeof value === "string") {
-    if (value.toLowerCase() === "true") {
+    const trimmedValue = value.trim().toLowerCase();
+    if (trimmedValue === "true") {
       return true;
-    } else if (value.toLowerCase() === "false") {
+    } else if (trimmedValue === "false") {
       return false;
     }
   }
